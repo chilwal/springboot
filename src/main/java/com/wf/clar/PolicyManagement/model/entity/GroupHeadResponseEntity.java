@@ -6,9 +6,7 @@ import lombok.Data;
 import java.util.Date;
 import java.util.List;
 
-@Entity
-@Table(schema = "POLICY", name = "CFG_BUS_GRP_ENT_FNCTN_TYP")
-@Data
+
 public class GroupHeadResponseEntity {
 
     @Id

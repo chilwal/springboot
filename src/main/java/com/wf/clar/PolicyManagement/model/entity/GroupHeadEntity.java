@@ -10,12 +10,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
-@Entity
-@Table(schema = "POLICY", name = "CFG_BUS_GRP_ENT_FNCTN_TYP")
+
 public class GroupHeadEntity {
 
     @Id

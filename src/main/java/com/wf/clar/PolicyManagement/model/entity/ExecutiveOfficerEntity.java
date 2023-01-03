@@ -4,9 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import java.util.Date;
 
-@Entity
-@Table(schema = "POLICY", name = "CFG_BUS_GRP_ENT_FNCTN_SUB_TYP")
-@Data
+
 public class ExecutiveOfficerEntity {
 
     @Id
