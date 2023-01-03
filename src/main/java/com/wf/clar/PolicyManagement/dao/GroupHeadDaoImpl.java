@@ -13,7 +13,7 @@ public class GroupHeadDaoImpl implements GroupHeadDao {
     private GroupHeadRepository groupHeadRepository;
 
     @Override
-    public List<GroupHeadEntity> getAll() {
+    public List<GroupHeadEntity> findAll() {
         return groupHeadRepository.findAll();
     }
 }

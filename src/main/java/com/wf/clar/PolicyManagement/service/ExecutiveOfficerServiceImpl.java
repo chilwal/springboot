@@ -3,9 +3,7 @@ package com.wf.clar.PolicyManagement.service;
 import com.wf.clar.PolicyManagement.dao.ExecutiveOfficerDao;
 import com.wf.clar.PolicyManagement.model.dto.ExecutiveOfficerRequest;
 import com.wf.clar.PolicyManagement.model.dto.ExecutiveOfficerResponse;
-import com.wf.clar.PolicyManagement.model.dto.GroupHeadResponse;
 import com.wf.clar.PolicyManagement.model.entity.ExecutiveOfficerEntity;
-import com.wf.clar.PolicyManagement.model.entity.GroupHeadEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,14 +19,20 @@ public class ExecutiveOfficerServiceImpl implements ExecutiveOfficerService {
     private ExecutiveOfficerDao executiveOfficerDao;
 
     @Override
-    public List<ExecutiveOfficerResponse> getAll() {
+    public List<ExecutiveOfficerResponse> findAll() {
 
         Comparator<ExecutiveOfficerResponse> comparator = Comparator.comparing(ExecutiveOfficerResponse::getSortOrderId);
 
-        return executiveOfficerDao.getAll().stream()
+        return executiveOfficerDao.findAll().stream()
                 .map(this::createGetResponse)
-               .sorted(comparator)
+                .sorted(comparator)
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public ExecutiveOfficerResponse findById(Integer id) {
+        var data = executiveOfficerDao.findById(id);
+        return createGetResponse(data.get());
     }
 
     @Override
@@ -72,7 +76,6 @@ public class ExecutiveOfficerServiceImpl implements ExecutiveOfficerService {
     public Integer delete(Integer id) {
         return executiveOfficerDao.delete(id);
     }
-
 
     private ExecutiveOfficerResponse createGetResponse(ExecutiveOfficerEntity entity) {
 

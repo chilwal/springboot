@@ -16,10 +16,10 @@ public class GroupHeadServiceImpl implements GroupHeadService {
     private GroupHeadDao groupHeadDao;
 
     @Override
-    public List<GroupHeadResponse> getAll() {
+    public List<GroupHeadResponse> findAll() {
         Comparator<GroupHeadResponse> comparator =Comparator.comparing(GroupHeadResponse::getSortOrderId);
 
-        return groupHeadDao.getAll().stream()
+        return groupHeadDao.findAll().stream()
                 .map(this::createGetResponse)
                 .sorted(comparator)
                 .collect(Collectors.toList());

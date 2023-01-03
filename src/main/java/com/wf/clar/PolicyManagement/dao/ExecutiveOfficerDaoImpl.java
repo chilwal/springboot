@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class ExecutiveOfficerDaoImpl implements ExecutiveOfficerDao {
@@ -14,7 +15,7 @@ public class ExecutiveOfficerDaoImpl implements ExecutiveOfficerDao {
     private ExecutiveOfficerRepository executiveOfficerRepository;
 
     @Override
-    public List<ExecutiveOfficerEntity> getAll() {
+    public List<ExecutiveOfficerEntity> findAll() {
         return executiveOfficerRepository.findAll();
     }
 
@@ -33,5 +34,11 @@ public class ExecutiveOfficerDaoImpl implements ExecutiveOfficerDao {
     @Override
     public Integer delete(Integer id) {
         return executiveOfficerRepository.updateExecutiveOfficerByStatus(id,'N');
+    }
+
+    @Override
+    public Optional<ExecutiveOfficerEntity> findById(Integer id) {
+        //ToDo: if id not exist in database
+        return executiveOfficerRepository.findById(id);
     }
 }
