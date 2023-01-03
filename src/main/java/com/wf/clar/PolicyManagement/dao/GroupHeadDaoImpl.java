@@ -16,4 +16,9 @@ public class GroupHeadDaoImpl implements GroupHeadDao {
     public List<GroupHeadEntity> findAll() {
         return groupHeadRepository.findAll();
     }
+
+    @Override
+    public void save(GroupHeadEntity gh1) {
+          groupHeadRepository.save(gh1);
+    }
 }

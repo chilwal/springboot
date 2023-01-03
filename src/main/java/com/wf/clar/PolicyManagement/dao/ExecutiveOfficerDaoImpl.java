@@ -20,16 +20,15 @@ public class ExecutiveOfficerDaoImpl implements ExecutiveOfficerDao {
     }
 
     @Override
-    public ExecutiveOfficerEntity create(ExecutiveOfficerEntity executiveOfficer) {
-        var data= executiveOfficerRepository.save(executiveOfficer);
-        return data;
+    public ExecutiveOfficerEntity addUpdate(ExecutiveOfficerEntity executiveOfficer) {
+        return executiveOfficerRepository.save(executiveOfficer);
     }
 
-    @Override
+   /* @Override
     public ExecutiveOfficerEntity update(ExecutiveOfficerEntity executiveOfficer) {
         var data= executiveOfficerRepository.save(executiveOfficer);
         return data;
-    }
+    }*/
 
     @Override
     public Integer delete(Integer id) {

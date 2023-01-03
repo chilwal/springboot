@@ -8,9 +8,9 @@ import java.util.Optional;
 public interface ExecutiveOfficerDao {
     List<ExecutiveOfficerEntity> findAll();
 
-    ExecutiveOfficerEntity create(ExecutiveOfficerEntity executiveOfficer);
+    ExecutiveOfficerEntity addUpdate(ExecutiveOfficerEntity executiveOfficer);
 
-    ExecutiveOfficerEntity update(ExecutiveOfficerEntity executiveOfficer);
+    //ExecutiveOfficerEntity update(ExecutiveOfficerEntity executiveOfficer);
 
     Integer delete(Integer id);
 

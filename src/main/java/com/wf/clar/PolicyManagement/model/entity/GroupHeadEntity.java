@@ -10,7 +10,12 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Entity
+@Table(schema = "POLICY", name = "CFG_BUS_GRP_ENT_FNCTN_TYP")
 public class GroupHeadEntity {
 
     @Id
@@ -44,7 +49,7 @@ public class GroupHeadEntity {
     @Column(name = "LAST_UPDT_BY_ID")
     private String updatedBy;
 
-    @OneToMany
-    @JoinColumn(name="VALUE_ID")
+    @OneToMany(targetEntity = ExecutiveOfficerEntity.class,cascade = CascadeType.ALL)
+    @JoinColumn(name="VALUE_ID", referencedColumnName = "VALUE_ID")
     List<ExecutiveOfficerEntity> executiveOfficers;
 }

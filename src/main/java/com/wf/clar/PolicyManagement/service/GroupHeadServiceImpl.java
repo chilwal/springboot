@@ -25,6 +25,11 @@ public class GroupHeadServiceImpl implements GroupHeadService {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public void save(GroupHeadEntity gh1) {
+          groupHeadDao.save(gh1);
+    }
+
     private GroupHeadResponse createGetResponse(GroupHeadEntity groupHeadEntity) {
 
         return GroupHeadResponse.builder()

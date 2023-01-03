@@ -8,4 +8,6 @@ import java.util.List;
 public interface GroupHeadDao {
 
            List<GroupHeadEntity> findAll();
+
+    void save(GroupHeadEntity gh1);
 }

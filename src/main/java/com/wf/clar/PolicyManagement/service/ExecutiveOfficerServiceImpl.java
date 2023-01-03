@@ -48,7 +48,7 @@ public class ExecutiveOfficerServiceImpl implements ExecutiveOfficerService {
         executiveOfficer.setCreatedOn(new Date());
         //ToDo: In case of create last updated by and last updated on will be null or same as created by created on
 
-        var data = executiveOfficerDao.create(executiveOfficer);
+        var data = executiveOfficerDao.addUpdate(executiveOfficer);
         return createGetResponse(data);
     }
 
@@ -68,7 +68,7 @@ public class ExecutiveOfficerServiceImpl implements ExecutiveOfficerService {
         executiveOfficer.setUpdatedBy(executiveOfficerRequest.getCreatedBy());
         executiveOfficer.setUpdatedOn(new Date());
 
-        var data = executiveOfficerDao.update(executiveOfficer);
+        var data = executiveOfficerDao.addUpdate(executiveOfficer);
         return createGetResponse(data);
     }
 
